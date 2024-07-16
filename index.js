@@ -13,13 +13,14 @@ const webserviceURLS= require('./Resources/Resources');
 const { AlertNotification, NotificationResponse } = require('./Models/Models.js');
 
 // app.set('views', './views');
-app.set('views', __dirname + '/../views');
-app.set('view engine', 'ejs');
-app.use(express.static('public'));
+// app.set('views', __dirname + '/../views');
+// app.set('view engine', 'ejs');
+// app.use(express.static('public'));
 
 //BASE PATH
 app.get('/', (req, res) => {
-    res.render('index', { title: 'NIMBUS Application', message: 'Welcome to Nimbus Home Page' });
+    // res.render('index', { title: 'NIMBUS Application', message: 'Welcome to Nimbus Home Page' });
+    res.json({"name": "Working"});
 });
 
 app.get('/notify', (req, res) => {
