@@ -3,6 +3,9 @@ admin.initializeApp({
     credential: admin.credential.cert( require('./key/cc-wellness-key.json') )
 });
 
+//For The Path
+const path = require('path');
+
 //For Express
 const messaging = admin.messaging();
 const express = require('express');
@@ -19,8 +22,7 @@ const { AlertNotification, NotificationResponse } = require('./Models/Models.js'
 
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
-app.use(exp.static(path.join(__dirname, 'public')));
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 //BASE PATH
 app.get('/', (req, res) => {
