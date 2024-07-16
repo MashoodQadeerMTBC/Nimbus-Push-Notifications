@@ -17,10 +17,13 @@ const { AlertNotification, NotificationResponse } = require('./Models/Models.js'
 // app.set('view engine', 'ejs');
 // app.use(express.static('public'));
 
+app.set("views", __dirname + "/views");
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + "public"));
+
 //BASE PATH
 app.get('/', (req, res) => {
-    // res.render('index', { title: 'NIMBUS Application', message: 'Welcome to Nimbus Home Page' });
-    res.json({"name": "Working"});
+    res.render('index', { title: 'NIMBUS Application', message: 'Welcome to Nimbus Home Page' });
 });
 
 app.get('/notify', (req, res) => {
