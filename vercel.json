@@ -27,7 +27,7 @@
   "crons":[
      {
         "path":"/notify",
-        "schedule":"*/20 * * * *"
+        "schedule":"*/10 * * * *"
      }
   ],
   "public":true
