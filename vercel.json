@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/",
+        "dest": "/index.js"
+      },
+      {
+        "src": "/notify",
+        "dest": "/index.js"
+      },
+      {
+        "src": "/public/(.*)",
+        "dest": "/public/$1"
+      },
+      {
+        "src": "/views/(.*)",
+        "dest": "/views/$1"
+      }
+    ]
+  }
