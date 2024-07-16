@@ -12,7 +12,8 @@ const axios = require('axios');
 const webserviceURLS= require('./Resources/Resources');
 const { AlertNotification, NotificationResponse } = require('./Models/Models.js');
 
-app.set('views', './views');
+// app.set('views', './views');
+app.set('views', __dirname + '/../views');
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
