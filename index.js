@@ -103,6 +103,8 @@ function devicesListToNotify( devicesList, callback ){
     console.log(messages);
     admin.messaging().sendEach(messages).then((response) => {
           console.log("The server response is " + response.successCount);
+          // Log the full response for debugging
+          console.log("Full response: ", JSON.stringify(response, null, 2));
           callback(null, response.successCount);
     }).catch((error) => {
           console.log("The server response is " + error);
