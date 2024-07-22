@@ -1,6 +1,17 @@
 const admin = require("firebase-admin");
+const fs = require('fs');
+
+//Fetching the Data And Decoding 
+const base64Data = fs.readFileSync('./key/configurations.json', 'utf8');
+
+// Decode the base64 data
+const decodedData = Buffer.from(base64Data, 'base64').toString('utf8');
+
+// Parse the decoded data as JSON
+const serviceAccount = JSON.parse(decodedData);
+
 admin.initializeApp({
-    credential: admin.credential.cert( require('./key/cc-wellness-key.json') )
+    credential: admin.credential.cert(serviceAccount )
 });
 
 //For The Path
