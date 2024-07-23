@@ -57,7 +57,7 @@ app.get('/notify', (req, res) => {
                 notificationResponse.data,
                 (error, successCount) => {
                     if (error) {
-                        return res.status(500).json({ error: 'Failed to send notifications' });
+                        return res.status(200).json({ error: 'Failed to send notifications' });
                     } else {
                         return  res.json({ successCount });
                     }
