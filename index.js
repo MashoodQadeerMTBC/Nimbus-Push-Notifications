@@ -45,12 +45,12 @@ app.get('/notify', (req, res) => {
               notificationResponse = new NotificationResponse(response.data.data);
             } catch (error) {
               console.error('Error creating NotificationResponse:', error);
-              return res.status(500).json({ error: 'Failed to send notifications since Webservice response could not be parsed.' });
+              return res.status(200).json({ error: 'Failed to send notifications since Webservice response could not be parsed.' });
               notificationResponse = null; 
             }
 
             if (notificationResponse.data.length == 0) {
-                return res.status(500).json({ error: 'Response does not have any device' });
+                return res.status(200).json({ error: 'Response does not have any device' });
             }
 
             devicesListToNotify(
