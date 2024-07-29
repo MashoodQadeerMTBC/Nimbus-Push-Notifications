@@ -91,11 +91,13 @@ function devicesListToNotify( devicesList, callback ){
         var messageData = {
             token: device.deviceToken,
             notification: {
-                title: 'Temperature Alert!',
+                title: device.notificationMessageTitle,
                 body:  device.notificationMessage
             },
             data: {
                 key1: 'Temperature Alert!',
+                employeeId: device.employeeId,
+                totalEmployee: String(device.totalEmployeesWithHighTemperature)
             }
         };
         messages.push(messageData);

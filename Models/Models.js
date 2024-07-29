@@ -14,18 +14,24 @@ class AlertNotification {
         this.totalEmployeesWithLowBattery = totalEmployeesWithLowBattery;
     }
 
-    get notificationMessage() {
+    get notificationMessageTitle() {
 
         var messageText = "";
         if (this.totalEmployeesWithHighTemperature == 1) {
             const tempFloat = parseFloat(this.employeeTemperature); 
             const roundedTemp = tempFloat.toFixed(1);
-            messageText = "Employee having name " + this.employeeName + " is suffering from temperature " + roundedTemp + "°F";     
+            messageText = this.employeeName + " has a body temperature of " + roundedTemp + "°F";     
         } else if (this.totalEmployeesWithHighTemperature > 1) {
             messageText = "There are " + this.totalEmployeesWithHighTemperature + " no of employees having alarming temperatue need your attention."
         } 
  
         return messageText;
+
+    } 
+
+    get notificationMessage() {
+
+        return "Ensure they cool down soon to avoid an emergency";
 
     } 
 
