@@ -20,7 +20,7 @@ class AlertNotification {
         if (this.totalEmployeesWithHighTemperature == 1) {
             const tempFloat = parseFloat(this.employeeTemperature); 
             const roundedTemp = tempFloat.toFixed(1);
-            messageText = "Employee having name " + this.employeeName + " is suffering from temperature " + roundedTemp;     
+            messageText = "Employee having name " + this.employeeName + " is suffering from temperature " + roundedTemp + "°F";     
         } else if (this.totalEmployeesWithHighTemperature > 1) {
             messageText = "There are " + this.totalEmployeesWithHighTemperature + " no of employees having alarming temperatue need your attention."
         } 
