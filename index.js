@@ -87,11 +87,12 @@ function devicesListToNotify( devicesList, callback ){
     var messages = Array();
     devicesList.forEach(device => {
 
+        console.log(device);
         var messageData = {
             token: device.deviceToken,
             notification: {
                 title: 'Temperature Alert!',
-                body: "There are a few employees with Alarming Temperature you need to review"
+                body:  device.notificationMessage
             },
             data: {
                 key1: 'Temperature Alert!',
